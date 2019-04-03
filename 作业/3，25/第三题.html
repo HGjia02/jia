@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../script/vue.js"></script>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+                    imgSrc:"img/01.jpg"
+                },
+                methods:{
+                    changeImg:function(){
+                        this.imgSrc="img/02.jpg"
+                    },
+                    changeImg2:function(){
+                        this.imgSrc="img/01.jpg"
+                    }
+                }
+            });
+        }
+    </script>
+    <div id="box">
+        <button v-on:click="changeImg">切换图片</button>
+        <img v-bind:src="imgSrc">
+        <button v-on:click="changeImg2">切换图片</button>
+    </div>
+</body>
+</html>

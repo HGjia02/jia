@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../script/vue.js"></script>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:"#nowtime",
+                data:{
+                    day:'',
+                    huro:'',
+                    min:'',
+                    sec:'',
+                },
+                created(){
+                    let time = new Date("2019-06-06").getTime();
+                    setInterval(() =>{
+                        let nowtimes = new Date().getTime();
+                        let times = time-nowtimes;
+                        let day = Math.floor (times/1000/60/60/24);
+                        let huor = Math.floor (times/1000/60/60%24);
+                        let menubar = Math.floor (times/1000/60%60);
+                        let second = Math.floor (times/1000%60);
+                        this.day = day;
+                        this.huro = huor;
+                        this.min = menubar;
+                        this.sec = second;
+                    },1000 )
+                }
+            })
+        }
+    </script>
+    <div id="nowtime">{{day}}天{{huro}}时{{min}}分{{sec}}秒</div>
+</body>
+</html>
