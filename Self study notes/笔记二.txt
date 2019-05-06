@@ -1,0 +1,117 @@
+<<<<<<< HEAD
+vue.js
+常用的指令：
+v-html
+用于输出HTML代码例如：
+<div v-html="message"></div>
+
+massage：’<h1>菜鸟教程</h1>‘
+
+然后就会输出；
+
+v-bind 主要用于属性绑定：
+完整写法
+<a v-bind:href="url"></a>
+缩写
+<a :href="url"></a>
+
+v-if 判断一个数值是否false或trun是否与运行。
+
+v-else-if在2.1.0新增，用作v-if的else-if块。可以链式多次使用；
+注意：v-else 、v-else-if 必须跟在 v-if 或者 v-else-if之后。
+类如：
+<div id="app">
+    <div v-if="type === 'A'">
+      A
+    </div>
+    <div v-else-if="type === 'B'">
+      B
+    </div>
+    <div v-else-if="type === 'C'">
+      C
+    </div>
+    <div v-else>
+      Not A/B/C
+    </div>
+也可以通过v-show指令来根据条件展示元素。
+
+循环使用v-for指令，v-for指令可以绑定数据到数组来渲染一个列表。
+v-for 可以通过一个对象的属性来迭代数据：
+列如：
+  <ul>
+    <li v-for="(value, key) in object">
+    {{ key }} : {{ value }}
+    </li>
+  </ul>
+value可以显示object在vue里运行的数据。
+
+v - model     一般表单元素（input）      双项数据绑定
+循环：
+       v - for = "name in arr"
+                       {{  name }}，
+       v - for = "(k，v) in arr"
+			{{k}}  
+事件：
+	v-on:click="函数"
+
+vue.js的监听属性：watch：
+
+=======
+vue.js
+常用的指令：
+v-html
+用于输出HTML代码例如：
+<div v-html="message"></div>
+
+massage：’<h1>菜鸟教程</h1>‘
+
+然后就会输出；
+
+v-bind 主要用于属性绑定：
+完整写法
+<a v-bind:href="url"></a>
+缩写
+<a :href="url"></a>
+
+v-if 判断一个数值是否false或trun是否与运行。
+
+v-else-if在2.1.0新增，用作v-if的else-if块。可以链式多次使用；
+注意：v-else 、v-else-if 必须跟在 v-if 或者 v-else-if之后。
+类如：
+<div id="app">
+    <div v-if="type === 'A'">
+      A
+    </div>
+    <div v-else-if="type === 'B'">
+      B
+    </div>
+    <div v-else-if="type === 'C'">
+      C
+    </div>
+    <div v-else>
+      Not A/B/C
+    </div>
+也可以通过v-show指令来根据条件展示元素。
+
+循环使用v-for指令，v-for指令可以绑定数据到数组来渲染一个列表。
+v-for 可以通过一个对象的属性来迭代数据：
+列如：
+  <ul>
+    <li v-for="(value, key) in object">
+    {{ key }} : {{ value }}
+    </li>
+  </ul>
+value可以显示object在vue里运行的数据。
+
+v - model     一般表单元素（input）      双项数据绑定
+循环：
+       v - for = "name in arr"
+                       {{  name }}，
+       v - for = "(k，v) in arr"
+			{{k}}  
+事件：
+	v-on:click="函数"
+
+vue.js的监听属性：watch：
+
+>>>>>>> 54e7086185bd88592ab4b40a82a2e5d4616a450e

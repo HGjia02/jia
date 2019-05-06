@@ -1,0 +1,246 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+  
+    <!-- <div id="app">
+        <div v-html="msg"></div>
+        <p v-if="seen">对没错</p>
+        <pre><a v-bind:href="url" href="">haigangqu</a></pre>
+    </div>
+    <script>
+    window.onload=function(){
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'<h1>海港真帅</h1>',
+                seen:false,
+                url:'http://www.baidu.com'
+            }
+        })
+    }
+    </script> -->
+    <!-- <div id="app">
+        <p v-if="seen">海格真帅</p>
+        <div v-if="Math.random() > 1">
+            <h1>没错</h1>
+            <p v-else>他很帅</p>
+        </div>
+        这个版本太低用不了 v-if和v-else的连用；
+        <div v-if="tb === 'A'">A</div>
+        <div v-else-if="tb ==='B'">B</div>
+        <div v-else-if="tb ==='C'">C</div>
+        <div v-else> Not A/B/C </div>
+    </div>
+    <script>
+    window.onload=function(){
+        new Vue({
+            el:"#app",
+            data:{
+                seen:trun,
+                ok:trun,
+                tb:'C',
+            }
+            
+        })
+    } -->
+    <!-- </script> -->
+<!-- 
+    <ul id="app">
+        <li v-for="vlaue in sites">{{vlaue}}</li>
+    </ul>
+    <script>
+    window.onload=function(){
+        new Vue({
+            el:"#app",
+            data:{
+            sites:["品如"]
+            }
+        })
+    }
+    </script> -->
+
+
+   <!-- <div id="app">
+        <p>原始字符串:{{msg}}</p>
+        <p>计算后的:{{reversedMsg}}</p>
+    </div>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:"#app",
+                data:{
+                    msg:'runnod'
+                },
+                computed:{
+                    reversedMsg:function(){
+                        return this.msg.split('').reverse().join('')
+                    }
+                }
+            })
+        }
+    </script>  
+  -->
+  <!-- 监听属性watch -->
+  <div id="props">
+      千米: <input type="text" v-model="kters">
+      米: <input type="text" v-model="meters">
+  </div>
+  <p id="info"></p>
+  <script type="text/javascript"></script>
+  <script>
+  window.onload=function(){
+      new Vue({
+          el:"#props",
+          data:{
+              kters:0,
+              meters:0,
+          },
+          watch:{
+              kters(val){
+                  this.kters = val;
+                  this.meters = this.kters*1000;
+              },
+              meters(val){
+                  this.kters = val/100;
+                  this.meters = val ;
+              }
+          }
+      });
+      vm.$watch('kters', function (newValue, oldValue) {
+		    document.getElementById ("info").innerHTML = "修改前值为: " + oldValue + "，修改后值为: " + newValue;
+		});
+  }
+  </script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+  
+    <!-- <div id="app">
+        <div v-html="msg"></div>
+        <p v-if="seen">对没错</p>
+        <pre><a v-bind:href="url" href="">haigangqu</a></pre>
+    </div>
+    <script>
+    window.onload=function(){
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'<h1>海港真帅</h1>',
+                seen:false,
+                url:'http://www.baidu.com'
+            }
+        })
+    }
+    </script> -->
+    <!-- <div id="app">
+        <p v-if="seen">海格真帅</p>
+        <div v-if="Math.random() > 1">
+            <h1>没错</h1>
+            <p v-else>他很帅</p>
+        </div>
+        这个版本太低用不了 v-if和v-else的连用；
+        <div v-if="tb === 'A'">A</div>
+        <div v-else-if="tb ==='B'">B</div>
+        <div v-else-if="tb ==='C'">C</div>
+        <div v-else> Not A/B/C </div>
+    </div>
+    <script>
+    window.onload=function(){
+        new Vue({
+            el:"#app",
+            data:{
+                seen:trun,
+                ok:trun,
+                tb:'C',
+            }
+            
+        })
+    } -->
+    <!-- </script> -->
+<!-- 
+    <ul id="app">
+        <li v-for="vlaue in sites">{{vlaue}}</li>
+    </ul>
+    <script>
+    window.onload=function(){
+        new Vue({
+            el:"#app",
+            data:{
+            sites:["品如"]
+            }
+        })
+    }
+    </script> -->
+
+
+   <!-- <div id="app">
+        <p>原始字符串:{{msg}}</p>
+        <p>计算后的:{{reversedMsg}}</p>
+    </div>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:"#app",
+                data:{
+                    msg:'runnod'
+                },
+                computed:{
+                    reversedMsg:function(){
+                        return this.msg.split('').reverse().join('')
+                    }
+                }
+            })
+        }
+    </script>  
+  -->
+  <!-- 监听属性watch -->
+  <div id="props">
+      千米: <input type="text" v-model="kters">
+      米: <input type="text" v-model="meters">
+  </div>
+  <p id="info"></p>
+  <script type="text/javascript"></script>
+  <script>
+  window.onload=function(){
+      new Vue({
+          el:"#props",
+          data:{
+              kters:0,
+              meters:0,
+          },
+          watch:{
+              kters(val){
+                  this.kters = val;
+                  this.meters = this.kters*1000;
+              },
+              meters(val){
+                  this.kters = val/100;
+                  this.meters = val ;
+              }
+          }
+      });
+      vm.$watch('kters', function (newValue, oldValue) {
+		    document.getElementById ("info").innerHTML = "修改前值为: " + oldValue + "，修改后值为: " + newValue;
+		});
+  }
+  </script>
+</body>
+>>>>>>> 54e7086185bd88592ab4b40a82a2e5d4616a450e
+</html>

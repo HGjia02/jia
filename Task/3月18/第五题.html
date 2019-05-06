@@ -1,0 +1,148 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .a{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="添加删除水果的名字" >
+    <button>添加</button>
+    <ul>
+        <li><span>香蕉</span> <span class="a">删除</span></li>
+        <li><span>苹果</span> <span class="a">删除</span></li>
+        <li><span>鸭梨</span> <span class="a">删除</span></li>
+    </ul>
+    <script>
+        var input = document.querySelector("input");
+        var btn = document.querySelector("button");
+        // var span = document.querySelector("span");
+        var a = document.querySelectorAll(".a");
+        // var li = document.querySelector("li");
+        var ul = document.querySelector("ul");
+        btn.onclick = function(){
+            var li = document.createElement("li");
+            li.innerHTML =input.value+(" 删除");
+            ul.appendChild(li);
+            input.value.onclick = function(){
+                for(var i = 0 ; i < a.length; i++){
+                    var parent = this.parentNode;
+                    parent.parentNode.removeChild(parent);
+                }
+            }
+        };
+        for(var i = 0 ; i < a.length; i++){
+            a[i].onclick = function(){
+                var parent = this.parentNode;
+                parent.parentNode.removeChild(parent);
+            }
+        }
+    </script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .a{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="添加删除水果的名字" >
+    <button>添加</button>
+    <ul>
+        <li><span>香蕉</span> <span class="a">删除</span></li>
+        <li><span>苹果</span> <span class="a">删除</span></li>
+        <li><span>鸭梨</span> <span class="a">删除</span></li>
+    </ul>
+    <script>
+        var input = document.querySelector("input");
+        var btn = document.querySelector("button");
+        // var span = document.querySelector("span");
+        var a = document.querySelectorAll(".a");
+        // var li = document.querySelector("li");
+        var ul = document.querySelector("ul");
+        btn.onclick = function(){
+            var li = document.createElement("li");
+            li.innerHTML =input.value+(" 删除");
+            ul.appendChild(li);
+            input.value.onclick = function(){
+                for(var i = 0 ; i < a.length; i++){
+                    var parent = this.parentNode;
+                    parent.parentNode.removeChild(parent);
+                }
+            }
+        };
+        for(var i = 0 ; i < a.length; i++){
+            a[i].onclick = function(){
+                var parent = this.parentNode;
+                parent.parentNode.removeChild(parent);
+            }
+        }
+    </script>
+</body>
+>>>>>>> 54e7086185bd88592ab4b40a82a2e5d4616a450e
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .a{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="添加删除水果的名字" >
+    <button>添加</button>
+    <ul>
+        <li><span>香蕉</span> <span class="a">删除</span></li>
+        <li><span>苹果</span> <span class="a">删除</span></li>
+        <li><span>鸭梨</span> <span class="a">删除</span></li>
+    </ul>
+    <script>
+        var input = document.querySelector("input");
+        var btn = document.querySelector("button");
+        // var span = document.querySelector("span");
+        var a = document.querySelectorAll(".a");
+        // var li = document.querySelector("li");
+        var ul = document.querySelector("ul");
+        btn.onclick = function(){
+            var li = document.createElement("li");
+            li.innerHTML =input.value+(" 删除");
+            ul.appendChild(li);
+            input.value.onclick = function(){
+                for(var i = 0 ; i < a.length; i++){
+                    var parent = this.parentNode;
+                    parent.parentNode.removeChild(parent);
+                }
+            }
+        };
+        for(var i = 0 ; i < a.length; i++){
+            a[i].onclick = function(){
+                var parent = this.parentNode;
+                parent.parentNode.removeChild(parent);
+            }
+        }
+    </script>
+</body>
+>>>>>>> 中英文单词表
+</html>
