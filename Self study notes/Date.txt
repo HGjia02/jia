@@ -1,0 +1,37 @@
+Date是JavaScript用于处理时间和日期的对象，可以通过Date对象获取当前时间，PS:Date对象获取的时间是本机时间。
+下面是Date一些方法：
+var dateNow = new Date();获取当前时间；
+var year = dateNom.getFullYear()；//获取年；
+var month = dateNow.getMonth();//获取月份，从零开始，一月的返回值是0；
+var date = dateNow.getDate()；//获取日期； 
+var huors = dateNow.getHours();//获取小时；
+var minutes = dateNow.getMinutes();//分钟;
+var secinds = dateNow.getSecinds();//获取秒;
+var day = dateNow.getDay();//获取星期；
+将时间显示在网页上：
+var h1 = document.querSelector("h1")获取html中的h1标签；
+var dateNow = new Date();
+var hours = dateNow.getHous();获取小时；
+var minutes = dateNow.getMinutes();获取分钟；
+var seconds = dateNow.getSeconds();获取秒
+var strTimeNow = huors + ":" + minutes + ":" + seconds;//创建了一个新的房间，把huors，minutes，seconds放在新变量里面。
+h1.innerHTML = strTimeNow;把新变量的值返回给HTNL中的h1；
+只是获取了当前时间的时间节点，我们可以通过计时器来实现同步：
+var h1 = document.querySelector("h1");
+function getTime(){     
+    var dateNow = new Date();
+    var hours = dateNow.getHours();      
+    var minutes = dateNow.getMinutes();  
+    var seconds = dateNow.getSeconds(); 
+    var strTimeNow = hours + ":" + minutes + ":" + seconds;
+    h1.innerHTML = strTimeNow;
+}//编写了一个函数；
+getTime();
+setInterval(getTime,1000);让这个函数每秒执行一次；这样就可以实现同步。
+还可以实现倒计时功能：
+var dateTarget = new Date("2017-5-1 17:30:20");//创建指定日期和时间的对象。
+var dateNow = new Date();先在时间；
+var target = dateTarget.getTime();
+var now = dateNow.getTime();
+可以通过用getTime方法获取时间戳；就是先在时间里目标时间的总毫秒数，然后在通过：
+Math.floor();向上取整就能得到距离目标时间还有多久，

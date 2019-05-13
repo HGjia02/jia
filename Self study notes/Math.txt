@@ -1,0 +1,17 @@
+Math对象：
+我们可以在javascript程序中直接写Math代表就是Math对象。
+可以通过对象直接获取圆周率{
+var pi = Math.PI;
+console.log（pi）；
+}
+Math对象的方法（可以简化数学运算）：
+var = Math.PI;
+var num1 = Math.foolr(pi);//向下取整；
+var num2 = Math.ceil(pi);//向上取整；
+var num3 = Math.round（pi）//四舍五入；
+var num4 = Math.abs(-pi);//获取绝对值；
+var num5 = Math.random（） //获取0-1之间的随机数；
+其中floor和random方法比较常用，也可以通过这两总方法获取随机数的范围：
+var number = 向上取整 Math.floor (  获取随机数 Math.random()*10+1)//获取了1-10的随机数
+ps：Math.random()*10+1(乘几就是到几，加几就是从几开始，*10+1就是1-10的随机数。)
+

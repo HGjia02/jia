@@ -1,0 +1,37 @@
+计时器方法可以实现在指定的时间过后，单词会重复函数的功能,
+setTimeout(function(){
+	//一秒后执行
+},1000);
+setInterval(function(){
+	//一秒后执行，并且一秒重复执行
+},1000);
+例子：
+setTimeout(function(){
+	console.log("hello word");
+},3000);
+三秒之后执行hello word，
+clearTimeout方法可以让让计时器停下来例子：
+var btn = document.querySelector("button");//获取en钮
+var t = setTimeout(function(){
+	console.log("hello word")
+},3000)
+//计时器三秒之后，后台输出hello word。
+btn.onclick = function(){
+	clearTimeouut(t);
+}
+//点击则不输出hello word；停止了计时器。
+setInterval：
+<p><span class="seconds">5</span>秒后跳转到百度</p>
+<script>
+    var seconds = document.querySelector(".seconds");
+    setInterval(function(){
+        var s = Number(seconds.innerHTML);
+        s--;
+        seconds.innerHTML = s;
+        if(s === 0){
+            location.href = "http://baidu.com";  //location.href可以实现页面跳转
+        }
+    },1000)
+</script>
+页面跳转最简单的：<meta http-equiv="refresh" content="3;URL=/ceshi">
+content="前面是跳转的事件;URL=加路径"

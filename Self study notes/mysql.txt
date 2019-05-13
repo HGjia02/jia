@@ -1,0 +1,30 @@
+安装完MySQL数据库启动 直接输入密码；
+然后前边会变成 mysql>
+命令行
+exit ；退出mysql
+show + databases + ；  //默认安装都有哪些数据库；
+默认数据库都有：
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| wo  rld
+ 
+
+use +mysql  //指定到mysql数据库；use指定或操控数据库s
+show  +tables +(空格)+； //在当前数据库有多少表；
+desc +表名 +； //如何去看表的表结构；例如：desc user；
+表结构：
+Field 列 字段 域
+Type 类型
+Null 代表空值
+Key 代表关键 组件的意思
+Default 代表是默认
+Extra 其他
+创建数据库：
+create database （名字） character set gbk;
+创建表：
+CREATE TABLE student(name VARCHAR(20),owner VARCHAR(20),species VARCHAR(20),sex CHAR(1),birth DATE,death DATE);

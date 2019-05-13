@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <script>
+		var a = 10;
+		var b = a;
+		a = 20;
+		document.writeln(b);
+	</script>5
+	<script>
+		var arr = [1,2,3];
+		var arr1 = arr ;
+		arr.push(4);
+		document.writeln(arr1);
+	</script> -->
+	<!-- 优先级："=最弱" （）最高 -->
+	<script>
+		// var a = 10;
+		// var b = ++a - 1 + a++;
+		// document.writeln(b)
+		// var a = 10;
+		// // a = a + 10;
+		// a += 10;
+		// document.writeln(a);
+	</script>
+	<!-- <script>
+		var a = 123;
+		var b = 234;
+
+		a = 
+		a = a + b ;
+		b = a - b ;
+		a = a - b ;
+		document.writeln(a)
+	</script> -->
+	<script>
+		// var nam = 123.456789;
+		// document.writeln(nam.toFixed(3));
+
+		// function test() {
+		// 	document.writeln('a');
+		// 	document.writeln('b');
+		// 	document.writeln('c');
+		// }
+		// test()
+		// // if( 1 > 0 ){
+		// 	test();	
+		// // }
+		// if( 2 > 0 ){
+		// 	test();	
+		// }
+		// if( 3 > 0 ){
+		// 	test();	
+		// }
+
+		// var test = function abc(){
+		// 		document.writeln('a');
+		// 		// 命名函数表达式;
+		// }
+		// var dome = function (){
+		// 	document.writeln('b');
+		// 	// 匿名函数表达式——函数表达式
+		// }
+
+        // 形参
+		// function sum(m){
+		// 	var sum1 = 0;
+		// 	for(var i = 0 ; i < arguments .length; i++){
+		// 		sum1 += arguments[i];
+		// 	}
+		// 	console.log(sum1);
+		// 	document.writeln(sum1)
+		// }
+		// // 实参
+		// sum(1,2)
+
+			// var sum = 0;
+			// function count(m){
+			// 	for(var i = 0 ; i <= m; i++){
+			// 		sum += i;
+			// 	}
+			// 	return sum ;                                                                                                                  
+			// }
+			// var	result = count(5)
+			// // console.log(result);
+			// var a =  "NaN" == "NaN";
+			// document.writeln(a);
+
+
+			// 	// var a = !0;
+			// 	// document.writeln(a);
+			// var scroe = parseInt(window.prompt('input'));
+			// if(scroe >90 && scroe <= 100){
+			// 	document.writeln('alibaba');
+			// }else if(scroe > 80 && scroe <= 90){
+			// 	document.writeln('daidu');
+			// }else{
+			// // 	document.writeln('errl');
+			// // }
+			// for(var i = 0;i < 10 ;i++){
+			// 	document.writeln('a')
+			// }
+			// 1.var i = 0;
+			// 2.if(i < 10){
+			// 	document.writeln('a');
+			// }
+			// 3.i++;
+			// 4.if(1 < 10){
+			// 	document.writeln('a');
+			// // }
+			// var	 i = 1 ;
+			// for(var i = 0 ; i < 100 ; i++){
+			// 	if( i % 3 || i % 5 || i % 7 == 0 ){
+			// // 		document.writeln(i + "");
+			// // 	}
+			// // }
+			// var i = 0
+			// while( i < 100 ) {
+				 
+			// 	if(i % 7 == 0){
+			// 		document.writeln(i + "")
+			// 	}
+				
+			// 	i++;
+
+			// 	// document.writel
+		// var arr = [1,2,3,4,5,465,"abc",undefined];
+		// 	for(var i = 0; i < arr.length; i++){
+		// 		// console.log(arr[i]);\
+		// 		arr[i] += 1;
+		// // 	}
+		// var cta = {
+
+		// 	lasNtame : "Deng",
+		// 	age : 80,
+		// 	father : "laowang",
+		// 	son : "wangxiaobao",
+		// 	some : false,
+		// }	
+		// console.log(cta.lasNtame);
+		// cta.lasNtame = "laodeng";
+		// console.log(cta.lasNtame)
+        //1` 面向过程
+		// // 2`面向对象
+
+		// var num = undefined ;
+		// console.log(typeof(num));
+
+
+		// var num  = 1 * "1";
+		// console.log(typeof(num)+ ":" + num);
+
+
+		// //把结果数返回给变量里面 
+		// var num = Number('123');
+		// // 返回结果为 var num = 123;
+		// console.log(typeof(num) + ":" + num);
+		// // number就是为了把（）里面的数变成数字类型
+
+
+		// parseInt第一点用途可以把数变成整形;
+		// // 冲数字位往后看，一直看到非数字位结束。
+		// var demo = "101abc";
+		// var  num = parseInt(demo , radix); radix : 2 - 36;
+		// // ()参数可以有两个 (deme,16)以目标进制为基底，转化成为10进制。
+		// console.log(typeof(num) + ":" + num);
+
+		// var demo = "100.2px";
+		// // 转换成正常的数，看到除了点以外的数字返回。
+		// var num = parseFloat(deme);
+		// console.log(typeof(num) + ":" + num)
+
+
+		// var demo = true;
+		// var num = String(demo);
+		// console.log(typeof(num) + ":" + num);
+		
+		// var demo = 1223;
+		// var num = demo.toString(8);
+		// console.log(typeof(num) + ":" + num);
+			
+			// n! = n*(n-1)!;
+			// 1。找规律
+		// 	// 2.找出口
+		// // function mul(n){
+
+		// // 	// var nam = 1;
+		// // 	// for( var i = 1 ; i <= n ; i ++){
+		// // 	// 	nam *= i;
+		// // 	// }
+		// // 	if(n == 1){
+		// // 		return 1;
+		// // 	}
+		// // 	return  n * mul(n-1);
+		// // }
+
+		// // mul(5);
+		// // // 递归;
+		// // mul(5) ==> 5 * mul(4);
+		// // mul(4) ==> 4 * mul(3);
+		// // mul(3) ==> 3 * mul(2);
+		// // mul(2) ==> 2 * mul(1);
+
+
+		// 	// 斐波那契数列
+		// // fb(n) == fb(n -1) + fb(n - 2);
+		// // function fb(n){
+		// // 	if( n == 1 || n == 2){
+		// // 		return 1;
+		// // 	}
+		// // 	return fb(n -1) + fb(n - 2); 
+		// // }
+
+		// // fb(5) ==> fb(4) + fb(3);
+
+		// 	// imply global
+
+		// 	// a = 10;
+		// 	// console.log(a);\
+
+		// // window.a = 10;
+
+		// 	// var b = 10;
+		// 	// console.log(window.b);
+
+		// 	// 预编译发生在函数执行的前一刻；
+
+		// function fn(a){
+		// 	console.log(a);
+		// 	var a = 123;
+		// 	console.log(a);
+		// 	function a(){}
+		// 	console.log(a);
+		// 	var b = function () {}
+		// 	console.log(b);
+		// 	function d() {}
+		// }
+		// fn(1)
+		// // // AO{
+		// // 	a : undefined
+		// // 	b : undefined;
+		// // }
+
+		
+
+		// 	function a() {
+		// 		function b(){
+		// 			var b = 234;
+		// 		}
+		// 		var a = 123;
+		// 		b();
+		// 	}
+		// 	var glob = 100;
+		// 	a();
+		// 	// a.[[scopel]] ---> 0:go{}
+		// 	// 
+
+
+
+		
+		                   
+
+
+		s
+
+
+
+			// var input = document.getElementsByTagName('input')[0]
+			// input.value;
+
+			var reg = /a/g;
+			var str = "abcd\na";
+			// var reg = new RegExp("abc")
+
+
+
+
+
+</script>
+	<input type="text">
+</body>
+</html>
