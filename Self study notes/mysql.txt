@@ -1,6 +1,7 @@
 安装完MySQL数据库启动 直接输入密码；
 然后前边会变成 mysql>
 命令行
+注意MySQL命令行以分号结尾 “；”
 exit ；退出mysql
 show + databases + ；  //默认安装都有哪些数据库；
 默认数据库都有：
@@ -26,5 +27,112 @@ Default 代表是默认
 Extra 其他
 创建数据库：
 create database （名字） character set gbk;
+创建表语句：
+创建命令CREATE TABLE 表名（
+    列名1        列的类型    【约束】，
+    列名2        列的类型    【约束】，
+    …………
+）；
 创建表：
-CREATE TABLE student(name VARCHAR(20),owner VARCHAR(20),species VARCHAR(20),sex CHAR(1),birth DATE,death DATE);
+CREATE TABLE student(name VARCHAR(20),、
+owner VARCHAR(20),
+species VARCHAR(20),
+sex CHAR(1),birth DATE,death DATE);
+添加列：
+ ALTER TABLE 表名 add 列名 tinyint（数据类型）；
+把add改成modify就可以修改列的数据类型
+修改表名：
+rename table 表名 to 重命名；
+删除一列：
+ ALTER TABLE 表名  drop  删除的列名；
+删除表：
+DROP TABLE 表名
+----------------------------------------------------------------------------
+插入语句：
+insert into 表名（列名，列名，列名） value（按顺序插入） ;
+插入两条：
+insert into 表名（列名，列名，列名） values（按顺序插入），（第二行） ;
+简写：
+INSERT INTO student
+VALUES ('puffball,'Diane','hamster','f','1999-03-30',NULL);
+注意：
+列名列值的类型，个数，顺序必须一 一对应。
+值不能超出列指定长度。
+插入的日期和字符一样，都使用引号括起来。
+-------------------
+更新操作：
+UPDATE 表名 SET 列名=列值，列名=列值
+（第二个条件）  where 列名 = 列值  ； ps;where后面 加的是条件
+删除：
+DELETE FROM 表名 【where 列名=值】 指定一个条件删除一列。  删除表数据，表结构还在。
+TRUNCATE TABLE  表名 ； 内容全部删除。		     删除整张表，然后创建一个全新地表。
+查询语句：
+select version<>；查看mysql的版本号；
+select（关键字：开始） + ename（字段名称） + from（关键字：从） + 表名 +；ps：win不分大小写。
+如果要多个字段查询则中间用逗号隔开：例如
+select（关键字：开始） + ename，enames（字段名称） + from（关键字：从） + 表名 +；
+查询所有字段：
+select（关键字：开始） + * + from（关键字：从） + 表名 +；ps：如果用这方法会导致效率低而且可读性差。Java语句中不建议写
+把字段从新命名：
+select（关键字：开始） + ename（字段名称）+ as + 新字段名   + from（关键字：从） + 表名 +；
+ps: as 关键字可以省略不写，用空格代替。新字段名可以用中文，例如：as ‘新字段名’。
+注意：一，SQL语句不区分大小写。
+二，SQL语句以分号结尾。
+三，SQL语句中字符串以单引号括起来。
+条件查询语句：
+    select
+->字段名称
+->from
+->表名
+->where
+->字段名称 = 500；
+转型成：select（关键字：开始） +字段名称 + from（关键字：从） + 表名 + where + 字段 = 500 ；
+这句话的意思就是查询出 表 中 字段 里 = 500的；
+ps：运算符有：
+=   等于 ， <>或！= 不等于 ，< 小于 ，<= 小于等于 ，> 大于 ，>= 大于等于 ，between…and…  并且 两个值之间>and<连接 ps：between前边必须放大值，
+and 并且 or 或者（和）；注意：and 的优先级比 or 高 ，所以一般写时候想先执行那个加括号“（）”
+ in 选项 和 表名 where  job=‘字段’ or  job=‘字段’；差不多：
+ 表名 where  in （‘字段’，‘字段’）；
+not 可以 用在 in 或 is 里；
+like 像 写法 ：
+where 表名 like ‘%什么%’
+ps：第一个字符 写在%前，最后一个写在 %后面。“_”下划线算一个字符，比如查看像第二字符这样的有多少写成 ：
+like ‘_%什么’
+is null 为空的有那些，is not null 不为空。
+------------------
+单一字段排序 order by ：
+select（关键字：开始） +字段名称 + from（关键字：从） + 表名 order  by (通过什么排序) + 字段 +asc； 升序 （默认升序）
+select（关键字：开始） +字段名称 + from（关键字：从） + 表名 order  by + 字段 +desc； 降序；
+select（关键字：开始） +字段名称 + from（关键字：从） + 表名 order  by + 字段 +逗号+asc；多个字段排序，前边的字段一样的话才会考虑后边
+-----------------------------
+ limit：
+curpage=当前页；
+pagesize=每页多少数据要查几条 ，展示多少页；
+select * from 表名 limit (curpage-1)*pagesize,pagesize;
+------------------------
+数据处理函数/单行处理函数：
+数据处理函数是SQL特有的，在别的数据库里可能不存在.
+一，转小写：
+select lower（字段） from 表名 ；
+底层数据库没有转小写，只是在查询结果上小写；
+二，转大写：
+select lower（字段） from 表名 ；
+………………
+-----------------------------
+实体完整性：针对列
+主键：
+约束类型：
+主键约束（primary key）
+特点：每个表中要有一个主键，数据唯一，不能重复，且不能为null
+ ALTER TABLE  表名 add primary key (列);
+唯一约束（unique）
+特点：可以为空 整列不能重复 
+自动增涨列（auto_increment）
+特点：指定列的数据自动增长列，即使删除序号还会继续。
+域完整性：针对单元格
+对单元格里面的数据正确与否
+约束：
+数据类型：数值类型，日期类型，字符串类型
+非空约束（not null）单元格必须写值；
+默认值约束（default）给单元格一个默认值；
+ 

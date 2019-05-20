@@ -1,0 +1,35 @@
+MySQL中的数据类型：
+ps：不全
+
+int   		整数型
+varchar		可变长度字符串
+char		定长字符串
+date		日期类型
+double		浮点型
+……	……	……
+MySQL数据库管理系统对日期处理提供了两个函数：
+ 	- str_to_date
+	- date_format
+ str_to_date
+	作用是将“日期字符串”转换成“日期数据类型”数据。{varchar（瓦塔） --->date（dei特）}
+                该函数的执行结果是DATE类型
+	函数格式是
+		str_to_date（‘日期字符串’，‘日期格式’）
+	MySQL的日期格式：
+		%Y	年
+		%m	月
+		%d	日
+		%H	时
+		%i	分
+		%s	秒
+	 str_to_date通常使用插入操作中 
+select  字段名  from 表名  where  字段名= str_to_date（‘2019-5-17’，‘%Y-%m-%d’）;
+
+date_format
+	作用：将日期类型date转换成拥有特定格式的日期字符串varchar{date ---> varchar}。
+	运算结果是：varchar类型而且具有特定格式的，
+	函数格式：
+		date_format(日期类型数据，‘日期格式’)；
+	date_format主要在查询操作中，客服需要特定格式展示的时候需要使用该函数。
+select 字段名，date_format(字段名ps：date属性，展示效果：%Y-%m-%d) as 字段原名 from 表名 ；
+
