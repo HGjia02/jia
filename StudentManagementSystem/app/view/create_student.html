@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="post" action="/students" class="table_stripeds">
+    <div class="form_group">
+        <label for="name" class="from_label" >学生姓名:</label>
+        <input type="text" name="name" class="form_control" id="name">
+    </div>
+    <div class="form_group">
+        <label for="clazz"  class="from_label">选择班级:</label>
+        <select class="form_control" id="clazz" name="clazz_id">
+            {% for item in clazzList %}
+            <option value="{{item.id}}">{{item.name}}</option>
+            {% endfor %}
+        </select>   
+    </div>
+    <button type="submit" class="btn btn_default">添加学生</button>
+</form>
+{% endblock %}

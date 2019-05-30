@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../public/js/jquery.min.js"></script>
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/public/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/public/css/layout.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar_default" style="height: 100%;">
+            <div class="container_fluid" style="height: 100%;">
+                <header class="navbar_header">
+                    <div class="navbar_header_brand">
+                        <a class="navbar_brand" href="/clazz">学生管理</a>
+                    </div>
+                    <div class="sidebar_toggle_box"></div>    
+                        <ul class="sidebar_toggle_ul">
+                            <li class="sidebar_toggle_li"></li>
+                            <a href="/logout" style="text-decoration: none;"><li class="sidebar_toggle_lis">退出登录</li></a> 
+                        </ul>
+                </header>
+                <ul class="nav navbar_nav">
+                    <li><a href="/clazz">班级列表</a></li>
+                    <li><a href="/insertclazz">添加班级</a></li>
+                    <li><a href="/students">学生列表</a></li>
+                    <li><a href="/insertstudent">添加学生</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var a_index = 0;
+        $("body").click(function(e){
+            var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+            var $i = $("<span/>").text(a[a_index]);
+            a_index = (a_index + 1) % a.length;
+            var x = e.pageX,y = e.pageY;
+            $i.css({
+                "z-index": 99999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": "#ff6651"
+            });
+            $("body").append($i);
+            $i.animate({"top": y-180,"opacity": 0},1500,function() {
+                $i.remove();
+            });
+        });
+    });
+</script>
+</html>
